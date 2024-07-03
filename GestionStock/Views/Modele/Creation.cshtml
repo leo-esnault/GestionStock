@@ -1,0 +1,38 @@
+﻿@model GestionStock.ViewModels.ModeleViewModel
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Créer un nouveau Modèle</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Reference">Référence</label>
+            <input asp-for="Reference" class="form-control"/>
+            <span asp-validation-for="Reference" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Nom">Nom</label>
+            <input asp-for="Nom" class="form-control" />
+            <span asp-validation-for="Nom" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DureeGarantie">Durée de garantie</label>
+            <input asp-for="DureeGarantie" class="form-control" />
+            <span asp-validation-for="DureeGarantie" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="SelectedServiceNames">Services</label>
+            <select asp-for="SelectedServiceNames" class="form-control" asp-items="ViewBag.Services" multiple="multiple"></select>
+            <span asp-validation-for="SelectedServiceNames" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Créer</button>
+        <a asp-controller="Modele" asp-action="Index" class="btn btn-secondary" style="width:150px">Retour à la Liste</a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

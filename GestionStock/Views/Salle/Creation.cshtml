@@ -1,0 +1,28 @@
+﻿@model Salle
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Créer une nouvelle Salle</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Nom">Nom</label>
+            <input asp-for="Nom" class="form-control" />
+            <span asp-validation-for="Nom" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Nom_Batiment">Nom du Batiment</label>
+            <select asp-for="Nom_Batiment" class ="form-control" asp-items="ViewBag.Nom_Batiment"></select>
+            <span asp-validation-for="Nom_Batiment" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Créer</button>
+        <a asp-controller="Salle" asp-action="Index" class="btn btn-secondary" style="width:150px">Retour à la Liste</a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

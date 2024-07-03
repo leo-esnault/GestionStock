@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Salle>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<partial name="_Notification" />
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Liste des salles</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Salle" asp-action="Creation" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Créer une salle
+            </a>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Nom
+            </th>
+            <th>
+                Nom du batiment
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="45%">
+                    @obj.Nom
+                </td>
+                <td width="45%">
+                    @obj.Nom_Batiment
+                </td>
+                <td width="10%">
+                    <div class="w-20 btn-group" role="group">
+                        <a asp-controller="Salle" asp-action="Modification" asp-route-nom="@obj.Nom" class="btn btn-primary btn-sm mx-1"> <i class="bi bi-pencil-square"></i></a>
+                    </div>
+                    <div class="w-20 btn-group" role="group">
+                        <a asp-controller="Salle" asp-action="Suppression" asp-route-nom="@obj.Nom" class="btn btn-danger btn-sm mx-1"> <i class="bi bi-trash3-fill"></i></a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

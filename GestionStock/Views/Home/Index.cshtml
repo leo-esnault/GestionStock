@@ -4,5 +4,16 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="w-20 btn-group" role="group">
+        <a asp-controller="Modele" asp-action="Index" class="btn btn-primary btn-sm mx-1">Gestion des Modèles</a>
+    </div>
+    <div class="w-20 btn-group" role="group">
+        <a asp-controller="Batiment" asp-action="Index" class="btn btn-primary btn-sm mx-1"> Gestion des Batiments</a>
+    </div>
+    <div class="w-20 btn-group" role="group">
+        <a asp-controller="Salle" asp-action="Index" class="btn btn-primary btn-sm mx-1"> Gestion des Salles</a>
+    </div>
+    <div class="w-20 btn-group" role="group">
+        <a asp-controller="Service" asp-action="Index" class="btn btn-primary btn-sm mx-1"> Gestion des Services</a>
+    </div>
 </div>
